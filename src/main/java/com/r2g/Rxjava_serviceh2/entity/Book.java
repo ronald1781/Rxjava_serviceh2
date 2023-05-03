@@ -1,0 +1,24 @@
+package com.r2g.Rxjava_serviceh2.entity;
+
+import lombok.*;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "books")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Book {
+    @Id
+    @Column(name = "id")
+    private String id;
+
+    @Column(name = "title")
+    private String title;
+
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Author author;
+}
